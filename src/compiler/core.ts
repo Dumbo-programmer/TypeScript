@@ -131,7 +131,7 @@ namespace ts {
 
     /**
      * Creates a new array with `element` interspersed in between each element of `input`
-     * if there is more than 1 value in `input`. Otherwise, returns the existing array.
+     * if there is more than 1 value in `input`. Otherwise, returns the existing `array`.
      */
     export function intersperse<T>(input: T[], element: T): T[] {
         if (input.length <= 1) {
@@ -162,7 +162,7 @@ namespace ts {
         return true;
     }
 
-    /** Works like Array.prototype.find, returning `undefined` if no element satisfying the predicate is found. */
+    /** Works like `Array.prototype.find`, returning `undefined` if no element satisfying the predicate is found. */
     export function find<T, U extends T>(array: readonly T[], predicate: (element: T, index: number) => element is U): U | undefined;
     export function find<T>(array: readonly T[], predicate: (element: T, index: number) => boolean): T | undefined;
     export function find<T>(array: readonly T[], predicate: (element: T, index: number) => boolean): T | undefined {
@@ -187,7 +187,7 @@ namespace ts {
         return undefined;
     }
 
-    /** Works like Array.prototype.findIndex, returning `-1` if no element satisfying the predicate is found. */
+    /** Works like `Array.prototype.findIndex`, returning `-1` if no element satisfying the predicate is found. */
     export function findIndex<T>(array: readonly T[], predicate: (element: T, index: number) => boolean, startIndex?: number): number {
         for (let i = startIndex || 0; i < array.length; i++) {
             if (predicate(array[i], i)) {
@@ -352,7 +352,7 @@ namespace ts {
     }
 
     /**
-     * Flattens an array containing a mix of array or non-array elements.
+     * Flattens an `array` containing a mix of array or non-array elements.
      *
      * @param array The array to flatten.
      */
@@ -442,7 +442,7 @@ namespace ts {
     }
 
     /**
-     * Maps an array. If the mapped value is an array, it is spread into the result.
+     * Maps an `array`. If the mapped value is an `array`, it is spread into the result.
      * Avoids allocation if all elements map to themselves.
      *
      * @param array The array to map.
